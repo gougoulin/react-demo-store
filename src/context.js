@@ -27,6 +27,7 @@ const RoomProvider = ({ children }) => {
     try {
       const res = await Client.getEntries({
         content_type: "beachResortRooms",
+        order: "fields.price",
       });
       const items = res.items;
       const rooms = items.map((item) => {
